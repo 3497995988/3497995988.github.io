@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BING搜索框</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        background-color: antiquewhite;
+    }
+    
+    div {
+        width: 100%;
+    }
+    
+    .sou {
+        border-radius: 5em;
+        height: 40px;
+        background-color: #4A4A4A;
+        color: #F5F5F5;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 16px;
+        text-indent: 8px;
+        box-shadow: 2px 2px 10px black;
+        width: 70%;
+        line-height: 40px;
+        text-align: center;
+    }
+    
+    .so {
+        width: 70px;
+        height: 40px;
+        background-color: #4A4A4A;
+        box-shadow: 2px 2px 10px black;
+        border-radius: 5em;
+        color: #F5F5F5;
+        margin-left: 5px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+</style>
+
+
+<body>
+    <div><input type="text" id="ru" class="sou"><button class="so" onclick="sou()">搜索</button></div>
+    <script>
+        var te = "https://cn.bing.com/search?q="
+
+        function sou() {
+            var text = document.getElementById("ru").value;
+            window.open(te + text);
+            // document.getElementById("s").src = te + text
+        }
+    </script>
+</body>
+
+</html>
