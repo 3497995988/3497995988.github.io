@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
 
     <meta name="viewport" content="initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, width=device-width,target-densitydpi=device-dpi" />
-
+    <link rel="icon" type="image/png" href="2.png" />
     <script type="text/javascript" src="scripts/createjs.js"></script>
 
     <script type="text/javascript">
@@ -233,7 +233,7 @@
         }
         
         .bgc1 {
-            background-color: #E4E6F3;
+            background-color: #FDBCAA;
         }
         
         .bgc2 {
@@ -794,6 +794,11 @@
 
         }
 
+        function resbest() {
+            cookie('bast-score', "0", 100);
+            document.getElementById("GameScoreLayer-bast").innerHTML = "最佳&nbsp;&nbsp;0"
+        }
+
         function closeWelcomeLayer() {
 
             var l = document.getElementById('welcome');
@@ -835,7 +840,7 @@
 
             l.style.display = 'block';
 
-            window.shareData.tTitle = '我吃掉了' + _gameScore + '个小土豆，不服来挑战！！！'
+            // window.shareData.tTitle = '我吃掉了' + _gameScore + '个小土豆，不服来挑战！！！'
 
         }
 
@@ -982,7 +987,9 @@
 
             <div id="GameScoreLayer-score" style="margin:10px 0;">得分</div>
 
-            <div id="GameScoreLayer-bast">最佳</div>
+            <div id="GameScoreLayer-bast" style="display: inline-block;">最佳
+            </div>
+            <div class="btn" style="line-height: 1.1em; display: inline-block; font-size: 1em;background-color: rgba(0, 0, 0, .3);margin-left: 5px;user-select: none;" onclick="resbest()">&nbsp;重 置&nbsp;</div>
 
             <div id="GameScoreLayer-btn" class="BOX" style="margin-top:10px;">
 
@@ -992,7 +999,7 @@
 
             </div>
             <div id="GameScoreLayer-share" class="BOX" style="margin-top:10px;">
-                <div class="btn BOX-S"><a href="https://space.bilibili.com/31961422" style="color:#fff;text-decoration:none;">快去关注土豆子吧!</a></div>
+                <div class="btn BOX-S"><a href="https://space.bilibili.com/31961422" style="color:#fff;text-decoration:none;" target="_blank">快去关注土豆子吧!</a></div>
             </div>
 
             <div class="pageContent" id="dd2" style="margin-top:10px;"></div>
@@ -1014,7 +1021,7 @@
 
                 <div style="font-size:2.2em; color:#fff; line-height:1.5em;">从最下面的小土豆开始，<br/>20秒内看你能吃掉多少个小土豆！<br/></div><br/>
 
-                <div id="ready-btn" class="btn loading" style="display:inline-block; margin:0 auto; width:8em; height:1.7em; line-height:1.7em; font-size:2.2em; color:#fff;"></div>
+                <div id="ready-btn" class="btn loading" style="user-select: none;display:inline-block; margin:0 auto; width:8em; height:1.7em; line-height:1.7em; font-size:2.2em; color:#fff;"></div>
                 <div id="dd1" style="margin: 10px 0 0 0;">
                     <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-6t+ed+2i-1n-4w" data-ad-client="ca-pub-0536909684105118" data-ad-slot="2155135916"></ins>
                     <script>
@@ -1066,8 +1073,7 @@
     </script>
 
     <div style="display:none">
-        <img src="logo.jpg">
-        <img src="http://c.cnzz.com/wapstat.php?siteid=1252935869&r=&rnd=-1568009156" width="0" height="0" />
+        <img src="2.png">
     </div>
 
 </body>
