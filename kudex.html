@@ -155,6 +155,7 @@
             border-top: 1px solid #1D70B6;
             background-repeat: no-repeat;
             background-position: center;
+            background-image: url(img/4.png);
         }
         
         .t1,
@@ -163,7 +164,7 @@
         .t4,
         .t5 {
             background-size: auto 100%;
-            background-image: url(2.png);
+            background-image: url(img/6.png);
         }
         
         .tt1,
@@ -171,8 +172,8 @@
         .tt3,
         .tt4,
         .tt5 {
-            background-size: auto 86%;
-            background-image: url(3.png);
+            background-size: auto 100%;
+            background-image: url(img/5.png);
         }
         
         .bl {
@@ -209,9 +210,11 @@
         }
         
         .bad {
-            background-color: #f00;
+            background-color: rgb(255, 0, 234);
             -webkit-animation: flash .2s 3;
             animation: flash .2s 3;
+            background-size: auto 100%;
+            background-image: url(img/7.png);
         }
         
         * {
@@ -389,20 +392,17 @@
                 } else {
 
                     var btn = document.getElementById('ready-btn');
-                    var kn = document.getElementById('ku-btn');
+
                     btn.className = 'btn';
-                    kn.className = "btn"
-                    btn.innerHTML = ' 预备，上！'
-                    kn.innerHTML = "困难版"
+
+                    btn.innerHTML = ' 辐射蹲下！'
+
                     btn.style.backgroundColor = '#F00';
-                    kn.style.backgroundColor = '#F00';
+
                     btn.onclick = function() {
 
                         closeWelcomeLayer();
 
-                    }
-                    kn.onclick = function() {
-                        window.location.href = "kudex.html"
                     }
 
                 }
@@ -509,7 +509,7 @@
         function gameInit() {
 
             createjs.Sound.registerSound({
-                src: "img/err.ogg",
+                src: "img/tap.ogg",
                 id: "err"
             });
 
@@ -519,7 +519,7 @@
             });
 
             createjs.Sound.registerSound({
-                src: "img/tap.ogg",
+                src: "img/err.ogg",
                 id: "tap"
             });
 
@@ -541,7 +541,7 @@
 
             _gameStart = false;
 
-            _gameTimeNum = 2000;
+            _gameTimeNum = 3000;
 
             GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum);
 
@@ -883,23 +883,23 @@
 
             if (score <= 49)
 
-                return '呵呵！我吃掉了' + score + '个小土豆！<br/>亲，还得加油哦!';
+                return '呵呵！我拯救了' + score + '个大头！<br/>亲，还得加油哦!';
 
             if (score <= 99)
 
-                return '酷！我吃掉了' + score + '个小土豆！<br/>亲，不错哦！';
+                return '酷！我拯救了' + score + '个磁暴线圈！<br/>亲，不错哦！';
 
             if (score <= 149)
 
-                return '帅呆了！我吃掉了' + score + '个小土豆！<br/>亲，爱死你了！';
+                return '帅呆了！我拯救了' + score + '个大头,满血复活！<br/>亲，辐射爱死你了！';
 
             if (score <= 199)
 
-                return '太牛了！我吃掉了' + score + '个小土豆！<br/>亲，威龙和蚂蚁都惊呆了！';
+                return '太牛了！我拯救了' + score + '个埃菲尔铁塔！<br/>亲，威龙和牛弟都惊呆了！';
 
             if (score > 199)
 
-                return 'OMG！我吃掉了' + score + '个小土豆！<br/>这还是地球人嘛w(ﾟДﾟ)w';
+                return 'OMG！我拯救了' + score + '个特斯拉ProMax线圈！<br/>这是观音转世嘛w(ﾟДﾟ)w';
 
         }
 
@@ -1044,12 +1044,11 @@
 
             <div style="margin:0 8% 0 9%;">
 
-                <div style="font-size:2.6em; color:#FEF002;">你爱小土豆吗？</div><br/>
+                <div style="font-size:2.6em; color:#FEF002;">你爱磁爆步兵吗？</div><br/>
 
-                <div style="font-size:2.2em; color:#fff; line-height:1.5em;">从最下面的小土豆开始，<br/>20秒内看你能吃掉多少个小土豆！<br/></div><br/>
+                <div style="font-size:2.2em; color:#fff; line-height:1.5em;">从最下面的大头开始，<br/>30秒内看你能拯救多少个大头！<br/>辐射会感谢你的!</div><br/>
 
                 <div id="ready-btn" class="btn loading" style="user-select: none;display:inline-block; margin:0 auto; width:8em; height:1.7em; line-height:1.7em; font-size:2.2em; color:#fff;"></div>
-                <div id="ku-btn" class="btn loading" style="user-select: none;display:inline-block; margin:0 auto; width:8em; height:1.7em; line-height:1.7em; font-size:2.2em; color:#fff;"></div>
                 <div id="dd1" style="margin: 10px 0 0 0;">
                     <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-6t+ed+2i-1n-4w" data-ad-client="ca-pub-0536909684105118" data-ad-slot="2155135916"></ins>
                     <script>
@@ -1076,7 +1075,7 @@
 
     <div id="share-wx" style="text-align: center;">
         <div style="color:#FFFFFF;font-size: 24px;"><b>(点击本框任意处取消)</b> </div>
-        <p style="text-align: center; padding-left: 10px;"><img src="2.png" id="share-wx-img" style="max-width: 280px; padding-right: 25px;"><img src="3.png" id="share-wx-img" style="max-width: 280px; padding-right: 25px;"><img src="2.png" id="share-wx-img" style="max-width: 280px; padding-right: 25px;"></p>
+        <p style="text-align: center; padding-left: 10px;"><img src="2.png" id="share-wx-img" style="min-width: 80px;max-width: 280px; padding-right: 25px;"><img src="3.png" id="share-wx-img" style="min-width: 80px;max-width: 280px; padding-right: 25px;"><img src="2.png" id="share-wx-img" style="min-width: 80px;max-width: 280px; padding-right: 25px;"></p>
     </div>
 
 
