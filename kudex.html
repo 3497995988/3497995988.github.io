@@ -799,7 +799,7 @@
         }
 
         function resbest() {
-            cookie('bast-score', "0", 100);
+            cookie('kubast-score', "0", 100);
             document.getElementById("GameScoreLayer-bast").innerHTML = "最佳&nbsp;&nbsp;0"
         }
 
@@ -831,13 +831,13 @@
 
             document.getElementById('GameScoreLayer-score').innerHTML = '得分&nbsp;&nbsp;' + _gameScore;
 
-            var bast = cookie('bast-score');
+            var bast = cookie('kubast-score');
 
             if (!bast || _gameScore > bast) {
 
                 bast = _gameScore;
 
-                cookie('bast-score', bast, 100);
+                cookie('kubast-score', bast, 100);
             }
 
             document.getElementById('GameScoreLayer-bast').innerHTML = '最佳&nbsp;&nbsp;' + bast;
