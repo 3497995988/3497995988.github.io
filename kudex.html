@@ -544,7 +544,7 @@
 
             _gameTimeNum = 3000;
 
-            GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum);
+            GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum) + "&nbsp;&nbsp;Score:" + _gameScore.toString();
 
             countBlockSize();
 
@@ -595,7 +595,7 @@
 
             } else {
 
-                GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum);
+                GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum) + "&nbsp;&nbsp;Score:" + _gameScore.toString();
 
             }
 
