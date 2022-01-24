@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>你是我的小土豆 太好玩了</title>
+    <title>快来吃掉小土豆 太香了!</title>
 
     <meta charset="utf-8" />
 
@@ -262,9 +262,13 @@
         #GameScoreLayer-share .btn {
             text-align: center;
             font-size: 1.1em;
-            background-color: rgba(0, 0, 0, .3);
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
             height: 2em;
             line-height: 2em;
+            user-select: none;
+            border-radius: .25rem;
         }
         
         .btn:active {
@@ -393,7 +397,7 @@
                     btn.className = 'btn';
                     kn.className = "btn"
                     btn.innerHTML = ' 预备，上！'
-                    kn.innerHTML = "困难版"
+                    kn.innerHTML = "进入困难版"
                     btn.style.backgroundColor = '#F00';
                     kn.style.backgroundColor = '#F00';
                     btn.onclick = function() {
@@ -1016,7 +1020,7 @@
 
             <div id="GameScoreLayer-bast" style="display: inline-block;">最佳
             </div>
-            <div class="btn" style="line-height: 1.1em; display: inline-block; font-size: 1em;background-color: rgba(0, 0, 0, .3);margin-left: 5px;user-select: none;" onclick="resbest()">&nbsp;重 置&nbsp;</div>
+            <div class="btn" style="line-height: 1.1em; display: inline-block; font-size: 1em;border-radius: .25rem;background-color: #3af03a93; margin-left: 5px;user-select: none;" onclick="resbest()">&nbsp;重 置&nbsp;</div>
 
             <div id="GameScoreLayer-btn" class="BOX" style="margin-top:10px;">
 
@@ -1026,7 +1030,8 @@
 
             </div>
             <div id="GameScoreLayer-share" class="BOX" style="margin-top:10px;">
-                <div class="btn BOX-S"><a href="https://space.bilibili.com/31961422" style="color:#fff;text-decoration:none;" target="_blank">快去关注土豆子吧!</a></div>
+                <div class="btn BOX-S"><a href="https://space.bilibili.com/31961422" style="color:#fff;text-decoration:none;" target="_blank">关注土豆子吧!</a></div>
+                <div class="btn BOX-S" style="margin-left: 10px;"><a href="kudex.html" style="color:#fff;text-decoration:none;">进入困难版</a></div>
             </div>
 
             <div class="pageContent" id="dd2" style="margin-top:10px;"></div>

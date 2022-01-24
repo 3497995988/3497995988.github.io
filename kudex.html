@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>你是我的小土豆 太好玩了</title>
+    <title>救援磁暴步兵 ⚡精彩刺激⚡</title>
 
     <meta charset="utf-8" />
 
@@ -266,9 +266,13 @@
         #GameScoreLayer-share .btn {
             text-align: center;
             font-size: 1.1em;
-            background-color: rgba(0, 0, 0, .3);
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
             height: 2em;
             line-height: 2em;
+            user-select: none;
+            border-radius: .25rem;
         }
         
         .btn:active {
@@ -388,22 +392,25 @@
 
                     btn.className = 'btn';
 
-                    btn.innerHTML = '您今天已经吃太多土豆啦，请明天继续！'
+                    btn.innerHTML = '您今天已经救援太多大头啦，请明天继续！'
 
                 } else {
 
                     var btn = document.getElementById('ready-btn');
-
+                    var kn = document.getElementById('ku-btn');
                     btn.className = 'btn';
-
+                    kn.className = "btn"
                     btn.innerHTML = ' 辐射蹲下！'
-
+                    kn.innerHTML = "进入土豆版"
                     btn.style.backgroundColor = '#F00';
-
+                    kn.style.backgroundColor = '#F00';
                     btn.onclick = function() {
 
                         closeWelcomeLayer();
 
+                    }
+                    kn.onclick = function() {
+                        window.location.href = "index.html"
                     }
 
                 }
@@ -1017,7 +1024,7 @@
 
             <div id="GameScoreLayer-bast" style="display: inline-block;">最佳
             </div>
-            <div class="btn" style="line-height: 1.1em; display: inline-block; font-size: 1em;background-color: rgba(0, 0, 0, .3);margin-left: 5px;user-select: none;" onclick="resbest()">&nbsp;重 置&nbsp;</div>
+            <div class="btn" style="line-height: 1.1em; display: inline-block; font-size: 1em;border-radius: .25rem;background-color: #0076B8; margin-left: 5px;user-select: none;" onclick="resbest()">&nbsp;重 置&nbsp;</div>
 
             <div id="GameScoreLayer-btn" class="BOX" style="margin-top:10px;">
 
@@ -1050,6 +1057,7 @@
                 <div style="font-size:2.2em; color:#fff; line-height:1.5em;">从最下面的大头开始，<br/>30秒内看你能拯救多少个大头！<br/>辐射会感谢你的!</div><br/>
 
                 <div id="ready-btn" class="btn loading" style="user-select: none;display:inline-block; margin:0 auto; width:8em; height:1.7em; line-height:1.7em; font-size:2.2em; color:#fff;"></div>
+                <div id="ku-btn" class="btn loading" style="user-select: none;display:inline-block; margin:0 auto; width:8em; height:1.7em; line-height:1.7em; font-size:2.2em; color:#fff;margin-top: 10px;"></div>
                 <div id="dd1" style="margin: 10px 0 0 0;">
                     <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-6t+ed+2i-1n-4w" data-ad-client="ca-pub-0536909684105118" data-ad-slot="2155135916"></ins>
                     <script>
