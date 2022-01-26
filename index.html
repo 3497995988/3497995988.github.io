@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>你是我的小土豆 太好玩了</title>
+    <title>快来吃掉小土豆 太香了!</title>
 
     <meta charset="utf-8" />
 
@@ -262,9 +262,13 @@
         #GameScoreLayer-share .btn {
             text-align: center;
             font-size: 1.1em;
-            background-color: rgba(0, 0, 0, .3);
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
             height: 2em;
             line-height: 2em;
+            user-select: none;
+            border-radius: .25rem;
         }
         
         .btn:active {
@@ -293,7 +297,7 @@
     </style>
 </head>
 
-<body onLoad="init()">
+<body onLoad="init()" onkeydown="keych()">
 
 
 
@@ -389,17 +393,20 @@
                 } else {
 
                     var btn = document.getElementById('ready-btn');
-
+                    var kn = document.getElementById('ku-btn');
                     btn.className = 'btn';
-
-                    btn.innerHTML = ' 预备，上！'
-
+                    kn.className = "btn"
+                    btn.innerHTML = ' 开吃！'
+                    kn.innerHTML = "进入困难版"
                     btn.style.backgroundColor = '#F00';
-
+                    kn.style.backgroundColor = '#F00';
                     btn.onclick = function() {
 
                         closeWelcomeLayer();
 
+                    }
+                    kn.onclick = function() {
+                        window.location.href = "kudex.html"
                     }
 
                 }
@@ -538,9 +545,9 @@
 
             _gameStart = false;
 
-            _gameTimeNum = 128000000;
+            _gameTimeNum = 2000;
 
-            GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum);
+            GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum) + "&nbsp;&nbsp;🏥:" + _gameScore.toString();
 
             countBlockSize();
 
@@ -591,7 +598,7 @@
 
             } else {
 
-                GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum);
+                GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum) + "&nbsp;&nbsp;🏥:" + _gameScore.toString();
 
             }
 
@@ -789,7 +796,7 @@
 
 
 
-            html += '<div id="GameTimeLayer"></div>';
+            html += '<div id="GameTimeLayer" style="user-select: none;"></div>';
             return html;
 
         }
@@ -971,23 +978,34 @@
 
 
 
-        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        // document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 
 
-        }, false);
-
-        // function keych(events, clickElement) {
-        //     var et = events || window.event;
-        //     var keycode = et.charCode || et.keyCode;
-        //     var sc = _gameScore;
-        //     var tct = "GameLayer";
-        //     if (sc <= 9) {
-        //         var tcr = "1-"
-        //         if (keycode == 68) {
-
-
-        //         }
-        //     }
+        // }, false);
+        function keych(events, clickElement) {
+            var et = events || window.event;
+            var keycode = et.charCode || et.keyCode;
+            if (keycode == 68) {
+                document.getElementById("GameLayer1-" + ((((document.getElementById("GameLayer1").style.transform.slice(17, 100).slice(0, -8) / 160) + 2) * 4) - 4).toString()).setAttribute("class", "block bl tt3")
+                console.log("D");
+                console.log("GameLayer1-" + ((((document.getElementById("GameLayer1").style.transform.slice(17, 100).slice(0, -8) / 160) + 2) * 4) - 4).toString());
+            }
+            if (keycode == 70) {
+                document.getElementById("GameLayer1-" + ((((document.getElementById("GameLayer1").style.transform.slice(17, 100).slice(0, -8) / 160) + 2) * 4) - 3).toString()).setAttribute("class", "block bl tt3")
+                console.log("F");
+                console.log("GameLayer1-" + ((((document.getElementById("GameLayer1").style.transform.slice(17, 100).slice(0, -8) / 160) + 2) * 4) - 3).toString());
+            }
+            if (keycode == 74) {
+                document.getElementById("GameLayer1-" + ((((document.getElementById("GameLayer1").style.transform.slice(17, 100).slice(0, -8) / 160) + 2) * 4) - 2).toString()).setAttribute("class", "block bl tt3")
+                console.log("J");
+                console.log("GameLayer1-" + ((((document.getElementById("GameLayer1").style.transform.slice(17, 100).slice(0, -8) / 160) + 2) * 4) - 2).toString());
+            }
+            if (keycode == 75) {
+                document.getElementById("GameLayer1-" + ((((document.getElementById("GameLayer1").style.transform.slice(17, 100).slice(0, -8) / 160) + 2) * 4) - 1).toString()).setAttribute("class", "block bl tt3")
+                console.log("K");
+                console.log("GameLayer1-" + ((((document.getElementById("GameLayer1").style.transform.slice(17, 100).slice(0, -8) / 160) + 2) * 4) - 1).toString());
+            }
+        }
     </script>
 
 
@@ -1002,7 +1020,7 @@
 
             <div id="GameScoreLayer-bast" style="display: inline-block;">最佳
             </div>
-            <div class="btn" style="line-height: 1.1em; display: inline-block; font-size: 1em;background-color: rgba(0, 0, 0, .3);margin-left: 5px;user-select: none;" onclick="resbest()">&nbsp;重 置&nbsp;</div>
+            <div class="btn" style="line-height: 1.1em; display: inline-block; font-size: 1em;border-radius: .25rem;background-color: #3af03a93; margin-left: 5px;user-select: none;" onclick="resbest()">&nbsp;重 置&nbsp;</div>
 
             <div id="GameScoreLayer-btn" class="BOX" style="margin-top:10px;">
 
@@ -1012,7 +1030,8 @@
 
             </div>
             <div id="GameScoreLayer-share" class="BOX" style="margin-top:10px;">
-                <div class="btn BOX-S"><a href="https://space.bilibili.com/31961422" style="color:#fff;text-decoration:none;" target="_blank">快去关注土豆子吧!</a></div>
+                <div class="btn BOX-S"><a href="https://space.bilibili.com/31961422" style="color:#fff;text-decoration:none;" target="_blank">关注土豆子吧!</a></div>
+                <div class="btn BOX-S" style="margin-left: 10px;"><a href="kudex.html" style="color:#fff;text-decoration:none;">进入困难版</a></div>
             </div>
 
             <div class="pageContent" id="dd2" style="margin-top:10px;"></div>
@@ -1035,6 +1054,7 @@
                 <div style="font-size:2.2em; color:#fff; line-height:1.5em;">从最下面的小土豆开始，<br/>20秒内看你能吃掉多少个小土豆！<br/></div><br/>
 
                 <div id="ready-btn" class="btn loading" style="user-select: none;display:inline-block; margin:0 auto; width:8em; height:1.7em; line-height:1.7em; font-size:2.2em; color:#fff;"></div>
+                <div id="ku-btn" class="btn loading" style="user-select: none;display:inline-block; margin:0 auto; width:8em; height:1.7em; line-height:1.7em; font-size:2.2em; color:#fff;margin-top: 10px;"></div>
                 <div id="dd1" style="margin: 10px 0 0 0;">
                     <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-6t+ed+2i-1n-4w" data-ad-client="ca-pub-0536909684105118" data-ad-slot="2155135916"></ins>
                     <script>
